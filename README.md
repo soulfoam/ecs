@@ -16,9 +16,13 @@ Example:
 You can `#define` the following (must be defined before `define #ECS_IMPLEMENTATION`):
 
 `#define ECS_STATIC` for a static implementation of the library.
+
 `#define ECS_ENABLE_LOGGING` for warnings when invalid operations occur.
+
 `#define ECS_MALLOC` to provide your own malloc.
+
 `#define ECS_FREE` to provide your own free.
+
 
 Example usage (some of it is psuedo code):
 
