@@ -65,9 +65,10 @@ typedef enum
 //ECS_MASK takes the number of components, and then the components
 //if you only need to check if the entity has one component,
 //you can optionally use ecs_ent_has_component
+
 #define MOVEMENT_SYSTEM_MASK \
 ECS_MASK(2, COMPONENT_TRANSFORM, COMPONENT_VELOCITY)
-static void 
+void 
 movement_system(Ecs *ecs)
 {
     for (u32 i = 0; i < ecs_for_count(ecs); i++)
@@ -86,7 +87,7 @@ movement_system(Ecs *ecs)
 
 #define SPRITE_RENDER_SYSTEM_MASK \
 ECS_MASK(2, COMPONENT_TRANSFORM, COMPONENT_SPRITE)
-static void 
+void 
 sprite_render_system(Ecs *ecs)
 {
     for (u32 i = 0; i < ecs_for_count(ecs); i++)
@@ -104,7 +105,7 @@ sprite_render_system(Ecs *ecs)
 
 #define MISSLE_SYSTEM_MASK \
 ECS_MASK(2, COMPONENT_TRANSFORM, COMPONENT_MISSLE)
-static void
+void
 missle_system(Ecs *ecs)
 { 
     for (u32 i = 0; i < ecs_for_count(ecs); i++)
