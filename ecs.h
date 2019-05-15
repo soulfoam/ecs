@@ -487,8 +487,11 @@ ecs_ent_print(Ecs *ecs, EcsEnt e)
 
 	for (uint32_t i = 0; i < ecs->component_count; i++)
 	{
-		printf("Component Type: %d (Index: %d)\n", i, 
-                ecs->components[index * ecs->component_count + i]);
+        if (ecs_ent_has_component(ecs, e, i))
+        {
+            printf("Component Type: %d (Index: %d)\n", 
+                i, ecs->components[index * ecs->component_count + i]);
+        }
 	}
 
 	printf("----------------\n");
