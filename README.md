@@ -158,6 +158,16 @@ main(int argc, char **argv)
     register_components(ecs);
     register_systems(ecs);
 
+    EcsEnt e = ecs_ent_make(ecs);
+    CTransform xform = {0, 0};
+    CVelocity velocity = {5, 0};
+    ecs_ent_add_component(ecs, e, COMPONENT_TRANSFORM, &xform);
+    ecs_ent_add_component(ecs, e, COMPONENT_VELOCITY, &velocity);
+    
+    //.... do whatever
+    
+    ecs_ent_destroy(ecs, e);
+    
     //eng loop code
     while(1)
     {
@@ -170,5 +180,7 @@ main(int argc, char **argv)
             ecs_run_systems(ecs, ECS_SYSTEM_RENDER);
         }
     }
+
+    ecs_destroy(ecs);
 }
 ```
