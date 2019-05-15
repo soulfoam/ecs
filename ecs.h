@@ -49,7 +49,7 @@ ECSDEF void      ecs_register_component(Ecs *ecs,
                                         ecs_component_destroy destroy_func);
 ECSDEF void      ecs_register_system(Ecs *ecs, ecs_system_func func, EcsSystemType type);
 ECSDEF void      ecs_run_systems(Ecs *ecs, EcsSystemType type);
-ECSDEF void      ecs_run_system(Ecs *ecs, uint32_t system_index, bool update);
+ECSDEF void      ecs_run_system(Ecs *ecs, uint32_t system_index);
 ECSDEF uint32_t  ecs_for_count(Ecs *ecs);
 ECSDEF EcsEnt    ecs_get_ent(Ecs *ecs, uint32_t index);
 ECSDEF EcsEnt    ecs_ent_make(Ecs *ecs);
