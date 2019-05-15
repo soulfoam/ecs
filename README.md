@@ -13,7 +13,7 @@ Example:
 #include "ecs.h"
 ```
 
-You can `#define` the following (must be defined before `define #ECS_IMPLEMENTATION`):
+You can `#define` the following (must be defined before `#define ECS_IMPLEMENTATION`):
 
 - `#define ECS_STATIC` for a static implementation of the library.
 
