@@ -182,7 +182,7 @@ ecs_stack_peek(EcsStack *s)
 {
     if (s->empty)
     {
-        ecs_warn("Failed to peek, stack is full", val);
+        ecs_warn("Failed to peek, stack is full");
         return 0;
     }
     return s->data[s->top-1];
@@ -206,7 +206,7 @@ ecs_stack_pop(EcsStack *s)
 {
     if (s->empty)
     {
-        ecs_warn("Failed to pop, stack is empty", val);
+        ecs_warn("Failed to pop, stack is empty");
         return 0;
     }
 
@@ -324,7 +324,7 @@ ecs_register_component(Ecs *ecs,
 {
     if (ecs->pool[component_type].data != NULL)
     {
-        ecs_warn("Registered Component type %lu more than once.\n", component_type);
+        ecs_warn("Registered Component type %u more than once.\n", component_type);
         return;
     }
 
@@ -399,7 +399,7 @@ ecs_ent_add_component(Ecs *ecs, EcsEnt e, EcsComponentType type, void *component
 
 	if (ecs_ent_has_component(ecs, e, type))
 	{
-		ecs_warn("Component %u already exists on EcsEnt %u", type, ECS_ENT_INDEX(e));
+		ecs_warn("Component %u already exists on EcsEnt %lu (Index %u)", type, e, index);
 		return;
 	}
 
@@ -416,7 +416,7 @@ ecs_ent_remove_component(Ecs *ecs, EcsEnt e, EcsComponentType type)
 
 	if (!ecs_ent_has_component(ecs, e, type))
 	{
-		ecs_warn("Component %u doesn't exist on EcsEnt %u", type, index);
+		ecs_warn("Component %u doesn't exist on EcsEnt %lu (Index %u)", type, e, index);
 		return;
 	}
 
@@ -432,7 +432,8 @@ ecs_ent_get_component(Ecs *ecs, EcsEnt e, EcsComponentType type)
 
 	if (!ecs_ent_has_component(ecs, e, type))
 	{
-		ecs_warn("Trying to get non existing Component %lu on EcsEnt %u", type, index);
+		ecs_warn("Trying to get non existent component %u on EcsEnt %lu (Index %u)", 
+                type, e, index);
 		return NULL;
 	}
 
