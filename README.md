@@ -43,7 +43,7 @@ typedef struct
 
 typedef struct
 {
-    uint32_t gl_id;
+    u32 gl_id;
     float rotation;
 } CSprite;
 
