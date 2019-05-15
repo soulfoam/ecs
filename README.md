@@ -24,7 +24,10 @@ You can `#define` the following (must be defined before `define #ECS_IMPLEMENTAT
 - `#define ECS_FREE` to provide your own free.
 
 
-Example usage (some of it is psuedo code):
+
+# Example usage:
+
+Do note some of this is psuedo code, so you can't compile this example.
 
 ```c
 #define ECS_IMPLEMENTATION
