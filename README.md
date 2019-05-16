@@ -187,3 +187,6 @@ main(int argc, char **argv)
     ecs_destroy(ecs);
 }
 ```
+
+# TODO
+- Mark components as read/write/readwrite so we can make systems run in parallel
