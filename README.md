@@ -190,3 +190,4 @@ main(int argc, char **argv)
 
 # TODO
 - Mark components as read/write/readwrite so we can make systems run in parallel
+- Do something with ECS_MASK so the count of components isn't required
